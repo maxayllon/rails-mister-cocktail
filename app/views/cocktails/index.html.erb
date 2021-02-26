@@ -1,10 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <i class="fas fa-beer"></i>
+    <%= link_to "Share Your Recipe", new_cocktail_path %>
+  </div>
+</nav>
 <div class="container">
   <h1>COCKTAILS</h1>
-  <ul>
+  <div class="cards">
     <% @cocktails.each do |cocktail| %>
-     <li class="cocktail"><%= cocktail.name %></li>
-     <%= link_to "look", cocktail_path(cocktail) %>
-     <% end %>
-  </ul>
-  <%= link_to "Create a new cocktail", new_cocktail_path %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @cocktail.photo.key%>)">
+        <%= cocktail.name %>
+        <%= link_to "look", cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>
 </div>
