@@ -24,8 +24,17 @@ Cocktail.destroy_all
 
 
 puts "other Seeds"
-file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-cocktail = Cocktail.create(name: 'Mojito')
-cocktail.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+file = URI.open('https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/mojito-549832/6706092-9-fre-FR/Mojito.jpg')
+cocktail = Cocktail.create(name:'Mojito')
+cocktail.photo.attach(io: file, filename: 'mojito.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.lesepicesrient.fr/wp-content/uploads/2017/08/punch-planteur-fruits-ete.jpg')
+cocktail = Cocktail.create(name:'Punch')
+cocktail.photo.attach(io: file, filename: 'punch.jpg', content_type: 'image/jpg')
+
+file = URI.open('https://www.196flavors.com/wp-content/uploads/2018/09/cuba-libre-1-FP.jpg')
+cocktail = Cocktail.create(name:'Cuba Libre')
+cocktail.photo.attach(io: file, filename: 'cuba.jpg', content_type: 'image/jpg')
+
 
 puts "New Seeds created"
